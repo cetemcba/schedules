@@ -8,10 +8,6 @@ interface Schedulesprops{
 
 export function MySchedules(){
 
-    for(let a in agendametos){
-        console.log(agendametos[a])
-        }
-    
     return(
         <>
             <div className="flex flex-row space-x-8">
@@ -32,7 +28,7 @@ export function MySchedules(){
                     {agendametos.map((agendameto,id) => {
                         return(
                             <tr className="border-b border-zinc-800">
-                                <td className="p-1">{agendameto.local}</td>
+                                <td key={id} className="p-1">{agendameto.local}</td>
                                 <td className="p-1">{agendameto.date}</td>
                                 <td className="p-1">{agendameto.hour}</td>
                                 <td className="p-1">{agendameto.status}</td>
